@@ -1,0 +1,16 @@
+alias gad="git add"
+alias hist="history"
+alias gco="git commit"
+alias greb="git rebase"
+alias gch="git checkout"
+alias gps="git push"
+alias gcoan="git commit --amend --no-edit"
+alias glo="git log"
+
+# Do not know why the line below fails
+# complete -F _complete_alias "${!BASH_ALIASES[@]}"
+complete -F _complete_alias gco
+complete -F _complete_alias gps
+complete -F _complete_alias greb
+complete -F _complete_alias gad
+complete -F _complete_alias glo
