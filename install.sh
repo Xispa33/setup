@@ -56,13 +56,13 @@ omzsh_install() {
 
   # Auto completion and highlighting plugins
   ZSH_CUSTOM=${HOME}/.oh-my-zsh
-  git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git "${ZSH_CUSTOM}"/plugins/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM}"/plugins/zsh-syntax-highlighting
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/themes/powerlevel10k"
   # sed -i 's#ZSH_THEME=\"robbyrussell\"#ZSH_THEME=\"powerlevel10k\/powerlevel10k\"#g' ${HOME}/.zshrc
   chsh -s $(which zsh)
 
-  cp .aliases .p10k.zsh .zshrc .bashrc ${HOME}
+  cp .aliases .p10k.zsh .zshrc .bashrc "${HOME}"
   # Autocompletion for aliases
   mkdir ~/.bash_completion.d
   curl https://raw.githubusercontent.com/cykerway/complete-alias/master/complete_alias > ~/.bash_completion.d/complete_alias
