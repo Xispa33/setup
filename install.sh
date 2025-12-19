@@ -96,12 +96,17 @@ base_install() {
  sudo apt-get install curl sudo wget -y
 }
 
+gnome_extensions_install() {
+  sudo apt install gnome-software gnome-tweaks gnome-tweak-tool -y
+}
+
 base_install
 vscode_install
 git_install
 docker_install
 omzsh_install
 powerlevel10k_font_install
+gnome_extensions_install
 extra_packages_install
 python_related_install
 gdb_dashboard_install
